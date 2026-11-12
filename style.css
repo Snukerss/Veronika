@@ -1,0 +1,272 @@
+:root {
+  --brown: #54483e;
+  --taupe: #b3a395;
+  --cream: #e9e3dd;
+  --white: #f4efe9;
+  --text: #54483e;
+  --font: "Playfair Display", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  background: #d9d2ca;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+/* ---------- Сторінка резюме ---------- */
+.resume {
+  position: relative;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  width: 100%;
+  max-width: 920px;
+  min-height: 650px;
+  background: var(--white);
+  border-left: 25px solid var(--white);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .18);
+  overflow: hidden;
+}
+
+/* ---------- Ліва колонка ---------- */
+.sidebar {
+  background: var(--brown);
+  color: var(--white);
+  padding: 28px 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: -25px;
+  padding-left: 45px;
+  margin-right: 0;
+}
+
+.photo {
+  width: 228px;
+  height: 228px;
+  margin: 0 auto 8px -4px;
+  border-radius: 50%;
+  border: 16px solid var(--taupe);
+  overflow: hidden;
+  background: var(--taupe);
+  flex-shrink: 0;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.side-block { margin-top: 14px; }
+
+.side-title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 2px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--taupe);
+  width: 145px;
+}
+
+.side-block p {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.skills {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.skills li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 1px;
+}
+.skills li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+/* ---------- Права частина ---------- */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+}
+
+.header {
+  position: relative;
+  background: var(--taupe);
+  padding: 76px 40px 22px 45px;
+  min-height: 165px;
+}
+
+.name {
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brown);
+  letter-spacing: .3px;
+}
+
+.position {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--brown);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--brown);
+  border-image: linear-gradient(to right, var(--brown) 0, var(--brown) 145px, transparent 145px) 1;
+}
+
+.body { padding: 28px 70px 30px 45px; }
+
+.block { margin-bottom: 14px; }
+
+.title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  width: 145px;
+  border-bottom: 1px solid var(--brown);
+  color: var(--brown);
+}
+
+.about {
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 440px;
+}
+
+.job { margin-bottom: 14px; font-size: 14px; line-height: 1.4; }
+.job-role { font-weight: 400; }
+.job-place { font-weight: 500; }
+
+.contacts {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.contacts li {
+  position: relative;
+  padding-left: 18px;
+}
+.contacts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--taupe);
+}
+.contacts li:first-child::before,
+.contacts li:last-child::before { background: var(--taupe); }
+.contacts a { color: inherit; text-decoration: none; }
+.contacts a:hover { text-decoration: underline; }
+
+/* ---------- Кружечки ---------- */
+.dots { display: flex; gap: 14px; }
+.dots span {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+}
+.dots--dark span { background: var(--brown); }
+.dots--light span { background: var(--taupe); }
+
+.header .dots {
+  position: absolute;
+  top: 24px;
+  right: 30px;
+}
+
+.sidebar .dots {
+  margin-top: auto;
+  padding-top: 20px;
+  gap: 10px;
+}
+.sidebar .dots span { width: 23px; height: 23px; }
+
+.dots--vertical {
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+  flex-direction: column;
+  gap: 16px;
+}
+.dots--vertical span { background: var(--brown); width: 22px; height: 22px; }
+
+/* ---------- Кнопка ---------- */
+.print-btn {
+  font-family: var(--font);
+  font-size: 15px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.print-btn:hover { background: #3d342c; transform: translateY(-1px); }
+
+/* ---------- Анімація появи ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 760px) {
+  .resume {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .sidebar { margin-left: 0; padding: 28px 24px; }
+  .photo { margin: 0 auto 10px; }
+  .header { padding: 70px 24px 22px; }
+  .name { font-size: 28px; }
+  .position { font-size: 14px; }
+  .body { padding: 24px; }
+  .about { max-width: none; }
+  .dots--vertical { display: none; }
+  .header .dots { right: 16px; gap: 8px; }
+  .header .dots span { width: 18px; height: 18px; }
+}
+
+/* ---------- Друк / PDF ---------- */
+@media print {
+  body { background: none; padding: 0; }
+  .print-btn { display: none; }
+  .resume { box-shadow: none; max-width: none; }
+  .reveal { opacity: 1; transform: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: A4 landscape; margin: 0; }
+}
